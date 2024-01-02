@@ -15,14 +15,12 @@ topics_schema = TopicSchema(many=True)
 class AddTopicResource(Resource):
     def post(self):
         data = request.json
-        if data and ("id" in data) and ("title" in data) and ("description" in data):
-            topic_ID = data["id"]
+        if data and ("title" in data) and ("description" in data):
             title = data["title"]
             description = data["description"]
 
             try:
                 new_topic = Topic(
-                    id=topic_ID,
                     title=title,
                     description=description
                 )

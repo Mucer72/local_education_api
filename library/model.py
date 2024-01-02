@@ -27,9 +27,9 @@ class UserProgress(db.Model):
     topicID = db.Column(db.Integer, db.ForeignKey('topic.id'), primary_key=True)
     score = db.Column(db.Integer, nullable=False)
 
-    def __init__(self, userid, topicid, score):
-        self.userID = userid
-        self.topicID = topicid
+    def __init__(self, userID, topicID, score):
+        self.userID = userID
+        self.topicID = topicID
         self.score = score
 
 class Topic(db.Model):
